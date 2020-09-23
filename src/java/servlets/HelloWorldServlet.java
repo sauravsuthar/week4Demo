@@ -25,12 +25,12 @@ public class HelloWorldServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String firstName=request.getParameter("firstname");
-       String lastName=request.getParameter("lastname");
-       
-       request.setAttribute("firstname", firstName);
-       request.setAttribute("lastname", lastName);
-       
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
+        
+        // set the attributes for the JSP
+        request.setAttribute("firstname", firstname);
+        request.setAttribute("lastname", lastname);
        
        getServletContext().getRequestDispatcher("/WEB-INF/sayHello.jsp").forward(request, response);
        
